@@ -30,11 +30,12 @@ class Navbar extends Component {
 
         let navbarLogo = '';
         if (logo) {
-            if (logo.text) {
-                navbarLogo = logo.text;
-            } else {
-                navbarLogo = <img src={logoUrl} alt={siteTitle} height="28" />;
-            }
+            navbarLogo = (
+                <Fragment>
+                    {logo.text ? logo.text : <img src={logoUrl} alt={siteTitle} height="28" />}
+                    <span class="navbar-title">{siteTitle}</span>
+                </Fragment>
+            );
         } else {
             navbarLogo = siteTitle;
         }

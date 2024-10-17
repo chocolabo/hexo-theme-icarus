@@ -32,7 +32,10 @@ class Footer extends Component {
                 <div class="level">
                     <div class="level-start">
                         <a class="footer-logo is-block mb-2" href={siteUrl}>
-                            {footerLogo}
+                            <div className="footer-logo-container">
+                                {footerLogo}
+                                {logo && !logo.text ? <span class="footer-site-title">{siteTitle}</span> : null}
+                            </div>
                         </a>
                         <p class="is-size-7">
                             <span dangerouslySetInnerHTML={{ __html: `&copy; ${siteYear} ${author || siteTitle}` }}></span>

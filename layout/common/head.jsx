@@ -4,6 +4,7 @@ const WebApp = require('hexo-component-inferno/lib/view/misc/web_app');
 const OpenGraph = require('hexo-component-inferno/lib/view/misc/open_graph');
 const StructuredData = require('hexo-component-inferno/lib/view/misc/structured_data');
 const Plugins = require('./plugins');
+const CustomHead = require('./custom-head');
 
 function getPageTitle(page, siteTitle, helper) {
     let title = page.title;
@@ -175,6 +176,9 @@ module.exports = class extends Component {
                 src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script> : null}
 
             {followItVerificationCode ? <meta name="follow.it-verification-code" content={followItVerificationCode} /> : null}
+
+            {/* Custom Head Component */}
+            <CustomHead />
         </head>;
     }
 };
